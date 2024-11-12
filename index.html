@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Puppala | Full Stack Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { font-family: Arial, sans-serif; scroll-behavior: smooth; }
+
+        /* Header */
+        header { position: fixed; width: 100%; background: #333; color: #fff; z-index: 100; }
+        nav ul { display: flex; justify-content: center; padding: 10px; list-style: none; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+        nav ul li a:hover { color: #ff6347; }
+
+        /* Hero Section with Custom Background Image */
+        .hero {
+            height: 100vh;
+            background-image: url('your-image-url.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 2.5em; }
+        .hero p { font-size: 1.2em; margin: 10px 0; }
+        .cta-button { background: #ff6347; padding: 10px 20px; color: #fff; border: none; cursor: pointer; font-size: 1.1em; }
+        .cta-button:hover { background: #e5533d; }
+
+        /* Sections */
+        section { padding: 60px 20px; max-width: 1550px; margin: auto; position: relative; }
+        section h2 { text-align: center; font-size: 2em; margin-bottom: 20px; }
+        section p { max-width: 800px; margin: auto; text-align: center; line-height: 1.6; }
+
+        /* About Section */
+        #about { background: #fa0909; }
+        #about img { max-width: 100%; height: auto; border-radius: 10px; margin-top: 20px; }
+
+        /* Assignments Section (Updated) */
+        .assignment-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .assignment-card { background: #333; color: #fff; padding: 20px; border-radius: 8px; transition: transform 0.3s; }
+        .assignment-card:hover { transform: translateY(-5px); }
+        .assignment-card h3 { margin-bottom: 10px; }
+        .assignment-card a { color: #ff6347; text-decoration: none; margin-right: 10px; }
+        .assignment-card a:hover { text-decoration: underline; }
+
+        /* Coding Competition Section */
+        #coding-competition {
+            background-image: url('coding-competition-bg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: rgb(13, 243, 63);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #coding-competition h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .competition-icons { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
+        .competition-icons a { font-size: 4em; color: #fff; transition: transform 0.3s ease, color 0.3s ease; }
+        .competition-icons a:hover { transform: scale(1.2); color: #ff6347; }
+
+        /* Skills Section */
+        .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .skills-list li { display: flex; align-items: center; background: #333; color: #ebe5e5; padding: 10px 15px; border-radius: 5px; font-weight: bold; gap: 10px; }
+        .skills-list i { font-size: 2em; }
+
+        /* Web Pages Links Section */
+        #web-pages-links { background: #050505; padding: 60px 20px; }
+        #web-pages-links h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .links-container { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .link-card { background: #333; color: #fff; padding: 20px; border-radius: 8px; width: 300px; text-align: center; }
+        .link-card a { color: #ff6347; font-size: 1.1em; text-decoration: none; }
+        .link-card a:hover { text-decoration: underline; }
+
+        /* Connect Section */
+        #connect {
+            background-image: url('connect-with-me-bg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #connect h2 { font-size: 3em; font-weight: bold; margin-bottom: 20px; }
+
+        .contact-form {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #ff6347;
+            color: #fff;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover { background-color: #e5533d; }
+
+        /* Social Links */
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            font-size: 3.5em;
+            color: #fff;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #ff6347;
+        }
+
+        .social-links .fa-github,
+        .social-links .fa-linkedin,
+        .social-links .fa-instagram,
+        .social-links .fa-hackerrank {
+            font-size: 3.5em;
+        }
+
+        /* Footer */
+        footer { background: #333; color: #fff; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#assignments">Assignments</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#web-pages-links">Web Pages</a></li>
+                <li><a href="#connect">Connect with Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Hello, I'm Rishi Puppala</h1>
+        <p>I'm a Full Stack Web Developer specializing in building scalable and responsive applications.</p>
+        <a href="#assignments" class="cta-button">View My Assignments</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm Rishi Puppala, a Full Stack Web Developer with a passion for building web applications and solving complex problems. I'm always learning and staying updated on new challenges in the tech world.</p>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments">
+        <h2>Assignments</h2>
+        <div class="assignment-container">
+            <div class="assignment-card">
+                <h3>Assignment 1: Data Structures & Algorithms</h3>
+                <p>This assignment covers basic concepts in DSA and includes a series of problems to solve.</p>
+                <a href="https://docs.google.com/presentation/d/1Xre7aKbXuznv4DMUV-0oYyTuVSYKqAK23bAfMWXFUM4/edit#slide=id.p1" target="_blank">View PDF</a>
+                <a href="https://rishipuppala.github.io/assignment-1" target="_blank">Live Demo</a>
+            </div>
+            <div class="assignment-card">
+                <h3>Assignment 2: Collision Resolution Techniques</h3>
+                <p>This assignment focuses on hashing and collision resolution methods.</p>
+                <a href="https://docs.google.com/presentation/d/1VK2r4AcIUdH4ujFfAeovOB0J4yslDstlBHNpRO1l8cY/edit#slide=id.p1" target="_blank">View PDF</a>
+                <a href="https://rishipuppala.github.io/assignment-2" target="_blank">Live Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Competition Section -->
+    <section id="coding-competition">
+        <h2>Coding Competitions</h2>
+        <div class="competition-icons">
+            <a href="https://www.hackerrank.com/profile/pb6335" target="_blank"><i class="fab fa-hackerrank"></i></a>
+            <a href="https://www.codechef.com/users/buffy_crane_66" target="_blank"><i class="fas fa-cogs"></i></a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li><i class="fab fa-cuttlefish"></i> C</li>
+            <li><i class="fab fa-cuttlefish"></i> C++</li>
+            <li><i class="fab fa-java"></i> Java</li>
+            <li><i class="fab fa-python"></i> Python</li>
+        </ul>
+    </section>
+
+    <!-- Web Pages Links Section -->
+    <section id="web-pages-links">
+        <h2>Web Pages</h2>
+        <div class="links-container">
+            <div class="link-card">
+                <h3>DSA Assignment 1</h3>
+                <a href="https://app.luminpdf.com/viewer/67307b75fe481ab850ea61a2?credentials-id=3ba0e474-b5d4-476e-b22c-653ef66a589a" target="_blank">Visit</a>
+            </div>
+            <div class="link-card">
+                <h3>DSA Assignment 2</h3>
+                <a href="https://app.luminpdf.com/viewer/67307c1ffe481ab850ea6484?credentials-id=e6cb405e-a75c-481c-8d87-eed0540744b1" target="_blank">View</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect with Me Section -->
+    <section id="connect">
+        <h2>Connect with Me</h2>
+        <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="https://github.com/rishi185" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rishipuppala" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/rishi_puppala/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.hackerrank.com/profile/pb6335" target="_blank"><i class="fab fa-hackerrank"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Rishi Puppala</p>
+    </footer>
+
+</body>
+</html>
